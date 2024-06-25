@@ -1,6 +1,6 @@
 
-minetest.register_node("digistuff:timer", {
-	description = "Digilines Timer",
+minetest.register_node("digiline_clock:clock", {
+	description = "Digilines Clock",
 	groups = {cracky=3},
 	is_ground_content = false,
 	on_construct = function(pos)
@@ -15,12 +15,16 @@ minetest.register_node("digistuff:timer", {
 		"jeija_microcontroller_sides.png",
 		"jeija_microcontroller_sides.png"
 	},
-	inventory_image = "digistuff_timer_top.png",
+	inventory_image = "digiline_clock_clock.png",
 	drawtype = "nodebox",
 	selection_box = {
 		--From luacontroller
 		type = "fixed",
-		fixed = { -8/16, -8/16, -8/16, 8/16, -5/16, 8/16 },
+		fixed = {
+			{-8/16, -8/16, -8/16, 8/16, -7/16, 8/16}, -- Bottom slab
+			{-5/16, -7/16, -5/16, 5/16, -6/16, 5/16}, -- Circuit board
+			{-3/16, -6/16, -3/16, 3/16, -5/16, 3/16}, -- IC
+		}
 	},
 	node_box = {
 		--From Luacontroller
